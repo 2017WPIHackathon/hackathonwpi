@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  SeasoningViewController.swift
 //  memuDemo
 //
-//  Created by Yen-Chang Hsieh on 1/13/17.
+//  Created by Yen-Chang Hsieh on 1/14/17.
 //  Copyright © 2017 Parth Changela. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SeasoningViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -41,13 +41,38 @@ class CookViewController: UIViewController {
     
     
     var selectedIngre:Array = [String]()
+    
+    func findSuggestedDish() -> Dish {
+        var matchPoint:Int = 0
+        var matchDish:String = String()
+        
+        for str in DishList.keys {
+            var dish:Dish = DishList[str]!
+            var tempPoint:Int = 0
+            if selectedIngre.contains(dish.category) {
+                tempPoint += 1
+                for ingredient in selectedIngre {
+                    if dish.componentListInDish.contains(ingredient) {
+                        tempPoint += 1
+                    }
+                }
+                
+                if tempPoint > matchPoint {
+                    matchDish = str
+                }
+            }
+        }
+        
+        return DishList[matchDish]!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Cookview tapped")
-
         // Do any additional setup after loading the view.
+        
+        for i in 0..<selectedIngre.count {
+            selectedIngre[i] = selectedIngre[i].lowercased()
+        }
         
         //1 获取json文件路径
         let path=Bundle.main.path(forResource: "try", ofType: "json")
@@ -98,19 +123,20 @@ class CookViewController: UIViewController {
             print("解析出错: \(error.localizedDescription)")
         }
         
-        let dishSet = Array(DishList.keys)
-        dishName.text! = dishSet[0]
-        dishPic.image = DishList[dishSet[0]]!.image
+        var findDish:Dish = findSuggestedDish()
+        
+        dishName.text! = findDish.name
+        dishPic.image = findDish.image
         
         var ingreStr:String = String()
-        for str in (DishList[dishSet[0]]?.componentListInDish)! {
+        for str in (findDish.componentListInDish) {
             ingreStr.append(str + ", ")
         }
         
         dishIngredient.text! = ingreStr
         
         var instructionStr:String = String()
-        for str in (DishList[dishSet[0]]?.instructionList)! {
+        for str in (findDish.instructionList) {
             instructionStr.append(str + "\n")
         }
         dishInstruction.text! = instructionStr

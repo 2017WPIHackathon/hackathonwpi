@@ -24,6 +24,9 @@
 		B92A32C31E29FD560023BDE9 /* VegetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A32C21E29FD560023BDE9 /* VegetableCell.swift */; };
 		B993B7861E2A52EC00346E13 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B7851E2A52EC00346E13 /* CartViewController.swift */; };
 		B993B7881E2A574900346E13 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B7871E2A574900346E13 /* CartCell.swift */; };
+		B993B78A1E2A88CF00346E13 /* CookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B7891E2A88CF00346E13 /* CookViewController.swift */; };
+		B993B78D1E2A91EB00346E13 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B78B1E2A91EB00346E13 /* Dish.swift */; };
+		B993B7901E2A947100346E13 /* try.json in Resources */ = {isa = PBXBuildFile; fileRef = B993B78F1E2A947100346E13 /* try.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		B92A32C21E29FD560023BDE9 /* VegetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegetableCell.swift; sourceTree = "<group>"; };
 		B993B7851E2A52EC00346E13 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B993B7871E2A574900346E13 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		B993B7891E2A88CF00346E13 /* CookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookViewController.swift; sourceTree = "<group>"; };
+		B993B78B1E2A91EB00346E13 /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		B993B78F1E2A947100346E13 /* try.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = try.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,8 @@
 		B222F1E61DAA30330089573D /* memuDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B993B78F1E2A947100346E13 /* try.json */,
+				B993B78B1E2A91EB00346E13 /* Dish.swift */,
 				B222F1E71DAA30330089573D /* AppDelegate.swift */,
 				B222F1E91DAA30330089573D /* MeatViewController.swift */,
 				B222F2161DAA33DA0089573D /* SWRevealViewController.h */,
@@ -137,6 +145,7 @@
 				B92A32C21E29FD560023BDE9 /* VegetableCell.swift */,
 				B993B7851E2A52EC00346E13 /* CartViewController.swift */,
 				B993B7871E2A574900346E13 /* CartCell.swift */,
+				B993B7891E2A88CF00346E13 /* CookViewController.swift */,
 			);
 			path = memuDemo;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 				B222F1F21DAA30330089573D /* LaunchScreen.storyboard in Resources */,
 				B222F1EF1DAA30330089573D /* Assets.xcassets in Resources */,
 				B222F1ED1DAA30330089573D /* Main.storyboard in Resources */,
+				B993B7901E2A947100346E13 /* try.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,11 +307,13 @@
 				B222F1EA1DAA30330089573D /* MeatViewController.swift in Sources */,
 				B222F21C1DAA36070089573D /* MenuCell.swift in Sources */,
 				B222F1E81DAA30330089573D /* AppDelegate.swift in Sources */,
+				B993B78A1E2A88CF00346E13 /* CookViewController.swift in Sources */,
 				B222F2181DAA33DA0089573D /* SWRevealViewController.m in Sources */,
 				B91274171E29CB0E00646892 /* ViewController.swift in Sources */,
 				B222F21E1DAA46600089573D /* VegetableViewController.swift in Sources */,
 				B92A32C11E29F7A30023BDE9 /* MeatCell.swift in Sources */,
 				B993B7881E2A574900346E13 /* CartCell.swift in Sources */,
+				B993B78D1E2A91EB00346E13 /* Dish.swift in Sources */,
 				B993B7861E2A52EC00346E13 /* CartViewController.swift in Sources */,
 				B92A32BF1E29F0590023BDE9 /* SeasoningViewController.swift in Sources */,
 				B222F21A1DAA354D0089573D /* menuViewController.swift in Sources */,

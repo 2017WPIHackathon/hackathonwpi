@@ -24,8 +24,18 @@ class VegetableViewController: UIViewController,UINavigationBarDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ManuNameArray = ["cabbage","potato"]
-        iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!]
+        ManuNameArray = ["artichoke",
+                         "asparagus",
+                         "cabbage",
+                         "carrot",
+                         "cauliflower",
+                         "celery",
+                         "corn",
+                         "cucumber",
+                         "egg",
+                         "eggplant",
+                         ]
+        iconArray = [UIImage(named:"artichoke")!,UIImage(named:"asparagus")!,UIImage(named:"cabbage")!,UIImage(named:"carrot")!,UIImage(named:"cauliflower")!,UIImage(named:"celery")!,UIImage(named:"corn")!,UIImage(named:"cucumber")!,UIImage(named:"egg")!,UIImage(named:"eggplant")!]
         
         // Do any additional setup after loading the view.
         revealViewController().rearViewRevealWidth = 200

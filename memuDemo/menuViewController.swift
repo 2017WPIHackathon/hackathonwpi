@@ -17,7 +17,7 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ManuNameArray = ["Home","Meat","Vegetable","Total"]
+        ManuNameArray = ["Home","Meat","Vegetable","Food Cart"]
         iconArray = [UIImage(named:"home")!,UIImage(named:"meat")!,UIImage(named:"vegetable")!,UIImage(named:"shopping cart")!]
         
         imgProfile.layer.borderWidth = 2

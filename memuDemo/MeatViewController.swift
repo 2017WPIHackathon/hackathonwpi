@@ -23,8 +23,8 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
         
         self.tblView.allowsMultipleSelection = true
         
-        ManuNameArray = ["beaf","pork"]
-        iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!]
+        ManuNameArray = ["Beef","Chicken","Duck","Goose","Lamb","Pork","Turkey"]
+        iconArray = [UIImage(named:"Beef")!,UIImage(named:"Chicken")!,UIImage(named:"Duck")!,UIImage(named:"Goose")!,UIImage(named:"Lamb")!,UIImage(named:"Pig")!,UIImage(named:"Turkey")!]
         
         for str in ManuNameArray {
             selectedMeat[str] = false

@@ -16,6 +16,21 @@ class CartViewController: UIViewController,UINavigationBarDelegate,UINavigationC
     var seletedCount: Int = 0
     var selectedIngre = [String]()
     
+    
+    @IBAction func action(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "Cook", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Cook" {
+            var cookViewController = segue.destination as! CookViewController;
+            
+            for str in selectedIngre {
+                cookViewController.selectedIngre.append(str)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +55,7 @@ class CartViewController: UIViewController,UINavigationBarDelegate,UINavigationC
         
         cell.lblView.text! = selectedIngre[indexPath.row]
         //cell.imgView.image = selectedIngre[keyArray[indexPath.row]]
+        cell.imgView.image = UIImage(named:"\(selectedIngre[indexPath.row])")
         
         cell.accessoryType = cell.isSelected ? .checkmark : .none
         cell.selectionStyle = .none // to prevent cells from being "highlighted"

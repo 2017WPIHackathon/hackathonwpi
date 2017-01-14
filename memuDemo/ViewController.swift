@@ -17,7 +17,6 @@ class ViewController: UIViewController {
         if revealViewController() != nil {
             btnMenuButton.target = revealViewController()
             btnMenuButton.action = "revealToggle:"
-            extraButton.action = "rightRevealToggle:"
         }
     }
     

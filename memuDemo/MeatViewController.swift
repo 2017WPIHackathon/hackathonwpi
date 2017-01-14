@@ -16,6 +16,8 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
     var ManuNameArray:Array = [String]()
     var iconArray:Array = [UIImage]()
     
+    var selectedMeat:Array = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,10 +56,12 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
         
         if cell.lblView.text! == "aaa" {
             print("aaa Tapped")
+            selectedMeat.append(cell.lblView.text!)
         }
         
         if cell.lblView.text! == "bbb" {
             print("bbb Tapped")
+            selectedMeat.append(cell.lblView.text!)
         }
     }
 }

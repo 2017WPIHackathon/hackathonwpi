@@ -16,13 +16,19 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
     var ManuNameArray:Array = [String]()
     var iconArray:Array = [UIImage]()
     
-    var selectedMeat:Array = [String]()
+    var selectedMeat = [String : Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ManuNameArray = ["aaa","bbb"]
+        self.tblView.allowsMultipleSelection = true
+        
+        ManuNameArray = ["beaf","pork"]
         iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!]
+        
+        for str in ManuNameArray {
+            selectedMeat[str] = false
+        }
         
         // Do any additional setup after loading the view.
         
@@ -45,6 +51,9 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
         
         cell.lblView.text! = ManuNameArray[indexPath.row]
         cell.imgView.image = iconArray[indexPath.row]
+
+        cell.accessoryType = cell.isSelected ? .checkmark : .none
+        cell.selectionStyle = .none // to prevent cells from being "highlighted"
         
         return cell
     }
@@ -54,15 +63,31 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let cell:MeatCell = tableView.cellForRow(at: indexPath) as! MeatCell
         
-        if cell.lblView.text! == "aaa" {
-            print("aaa Tapped")
-            selectedMeat.append(cell.lblView.text!)
+        if cell.isSelected {
+            cell.isSelected = false
+            if cell.accessoryType == UITableViewCellAccessoryType.none {
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                selectedMeat[cell.lblView.text!] = true
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.none
+                selectedMeat[cell.lblView.text!] = false
+            }
         }
-        
-        if cell.lblView.text! == "bbb" {
-            print("bbb Tapped")
-            selectedMeat.append(cell.lblView.text!)
+    }
+    
+    @IBAction func action(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "toVegetable", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "toVegetable" {
+            var vegetableViewController = segue.destination as! VegetableViewController;
+            
+            for str in selectedMeat.keys {
+                if selectedMeat[str]! {
+                    vegetableViewController.selectedIngre.append(str)
+                }
+            }
         }
     }
 }
-

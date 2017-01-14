@@ -17,8 +17,8 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ManuNameArray = ["Meat", "Vegetable","Seasoning","Shopping Cart"]
-        iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!,UIImage(named:"shopping cart")!,UIImage(named:"shopping cart")!]
+        ManuNameArray = ["Home","Meat","Vegetable","Total"]
+        iconArray = [UIImage(named:"home")!,UIImage(named:"meat")!,UIImage(named:"vegetable")!,UIImage(named:"shopping cart")!]
         
         imgProfile.layer.borderWidth = 2
         imgProfile.layer.borderColor = UIColor.green.cgColor
@@ -52,6 +52,15 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let cell:MenuCell = tableView.cellForRow(at: indexPath) as! MenuCell
         
+        if cell.lblMenuname.text! == "Home" {
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+
+        }
+        
         if cell.lblMenuname.text! == "Meat" {
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MeatViewController") as! MeatViewController
@@ -68,16 +77,12 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
         }
         
-        if cell.lblMenuname.text! == "Seasoning" {
+        if cell.lblMenuname.text! == "Shopping Cart" {
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "SeasoningViewController") as! SeasoningViewController
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             
-            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)            
-        }
-        
-        if cell.lblMenuname.text! == "Shopping Cart" {
-            print("Shopping Cart")
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
         }
     }
 }

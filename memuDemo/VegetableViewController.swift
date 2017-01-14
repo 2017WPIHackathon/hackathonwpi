@@ -17,10 +17,14 @@ class VegetableViewController: UIViewController,UINavigationBarDelegate,UINaviga
     var ManuNameArray:Array = [String]()
     var iconArray:Array = [UIImage]()
     
+    var selectedVeg = [String : Bool]()
+    
+    var selectedIngre = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ManuNameArray = ["aaa","bbb"]
+        ManuNameArray = ["cabbage","potato"]
         iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!]
         
         // Do any additional setup after loading the view.
@@ -44,6 +48,9 @@ class VegetableViewController: UIViewController,UINavigationBarDelegate,UINaviga
         cell.lblView.text! = ManuNameArray[indexPath.row]
         cell.imgView.image = iconArray[indexPath.row]
         
+        cell.accessoryType = cell.isSelected ? .checkmark : .none
+        cell.selectionStyle = .none // to prevent cells from being "highlighted"
+        
         return cell
     }
     
@@ -51,12 +58,35 @@ class VegetableViewController: UIViewController,UINavigationBarDelegate,UINaviga
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
         let cell:VegetableCell = tableView.cellForRow(at: indexPath) as! VegetableCell
         
-        if cell.lblView.text! == "aaa" {
-            print("aaa Tapped")
+        if cell.isSelected {
+            cell.isSelected = false
+            if cell.accessoryType == UITableViewCellAccessoryType.none {
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                selectedVeg[cell.lblView.text!] = true
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.none
+                selectedVeg[cell.lblView.text!] = false
+            }
         }
-        
-        if cell.lblView.text! == "bbb" {
-            print("bbb Tapped")
+    }
+    
+    @IBAction func action(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "toCart", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "toCart" {
+            var cartViewController = segue.destination as! CartViewController;
+            
+            for str in selectedVeg.keys {
+                if selectedVeg[str]! {
+                    cartViewController.selectedIngre.append(str)
+                }
+            }
+            
+            for str in selectedIngre {
+                cartViewController.selectedIngre.append(str)
+            }
         }
     }
 }

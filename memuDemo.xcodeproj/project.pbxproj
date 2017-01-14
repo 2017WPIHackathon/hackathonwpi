@@ -22,6 +22,8 @@
 		B92A32BF1E29F0590023BDE9 /* SeasoningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A32BE1E29F0590023BDE9 /* SeasoningViewController.swift */; };
 		B92A32C11E29F7A30023BDE9 /* MeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A32C01E29F7A30023BDE9 /* MeatCell.swift */; };
 		B92A32C31E29FD560023BDE9 /* VegetableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A32C21E29FD560023BDE9 /* VegetableCell.swift */; };
+		B993B7861E2A52EC00346E13 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B7851E2A52EC00346E13 /* CartViewController.swift */; };
+		B993B7881E2A574900346E13 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B993B7871E2A574900346E13 /* CartCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		B92A32BE1E29F0590023BDE9 /* SeasoningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasoningViewController.swift; sourceTree = "<group>"; };
 		B92A32C01E29F7A30023BDE9 /* MeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeatCell.swift; sourceTree = "<group>"; };
 		B92A32C21E29FD560023BDE9 /* VegetableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegetableCell.swift; sourceTree = "<group>"; };
+		B993B7851E2A52EC00346E13 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		B993B7871E2A574900346E13 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				B92A32BE1E29F0590023BDE9 /* SeasoningViewController.swift */,
 				B92A32C01E29F7A30023BDE9 /* MeatCell.swift */,
 				B92A32C21E29FD560023BDE9 /* VegetableCell.swift */,
+				B993B7851E2A52EC00346E13 /* CartViewController.swift */,
+				B993B7871E2A574900346E13 /* CartCell.swift */,
 			);
 			path = memuDemo;
 			sourceTree = "<group>";
@@ -295,6 +301,8 @@
 				B91274171E29CB0E00646892 /* ViewController.swift in Sources */,
 				B222F21E1DAA46600089573D /* VegetableViewController.swift in Sources */,
 				B92A32C11E29F7A30023BDE9 /* MeatCell.swift in Sources */,
+				B993B7881E2A574900346E13 /* CartCell.swift in Sources */,
+				B993B7861E2A52EC00346E13 /* CartViewController.swift in Sources */,
 				B92A32BF1E29F0590023BDE9 /* SeasoningViewController.swift in Sources */,
 				B222F21A1DAA354D0089573D /* menuViewController.swift in Sources */,
 				B92A32C31E29FD560023BDE9 /* VegetableCell.swift in Sources */,

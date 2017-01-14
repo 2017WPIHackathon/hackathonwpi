@@ -9,12 +9,12 @@
 import UIKit
 
 class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-
     @IBOutlet weak var tblTableView: UITableView!
     @IBOutlet weak var imgProfile: UIImageView!
     
     var ManuNameArray:Array = [String]()
     var iconArray:Array = [UIImage]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ManuNameArray = ["Meat", "Vegetable","Seasoning","Shopping Cart"]
@@ -36,7 +36,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ManuNameArray.count
-        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,11 +50,9 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        
         let cell:MenuCell = tableView.cellForRow(at: indexPath) as! MenuCell
-        print(cell.lblMenuname.text!)
+        
         if cell.lblMenuname.text! == "Meat" {
-            print("Meat Tapped")
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MeatViewController") as! MeatViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
@@ -64,8 +61,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         if cell.lblMenuname.text! == "Vegetable" {
-            print("Vegetable Tapped")
-           
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "VegetableViewController") as! VegetableViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
@@ -74,8 +69,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         if cell.lblMenuname.text! == "Seasoning" {
-            print ("Seasoning")
-            
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "SeasoningViewController") as! SeasoningViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
@@ -87,14 +80,4 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             print("Shopping Cart")
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

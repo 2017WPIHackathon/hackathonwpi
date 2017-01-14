@@ -9,8 +9,8 @@
 import UIKit
 
 class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource {
-    @IBOutlet weak var menu: UIBarButtonItem!
     
+    @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var tblView: UITableView!
     
     var ManuNameArray:Array = [String]()
@@ -36,7 +36,6 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ManuNameArray.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,16 +50,14 @@ class MeatViewController: UIViewController,UINavigationBarDelegate,UINavigationC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let revealviewcontroller:SWRevealViewController = self.revealViewController()
-        
         let cell:MeatCell = tableView.cellForRow(at: indexPath) as! MeatCell
-        print(cell.lblView.text!)
+        
         if cell.lblView.text! == "aaa" {
             print("aaa Tapped")
         }
         
         if cell.lblView.text! == "bbb" {
             print("bbb Tapped")
-            
         }
     }
 }

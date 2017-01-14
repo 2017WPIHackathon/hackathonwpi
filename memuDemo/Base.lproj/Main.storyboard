@@ -289,7 +289,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="FBd-H7-puR" id="t7d-7v-C3S"/>
-                                    <outlet property="delegate" destination="FBd-H7-puR" id="qUG-2t-0fd"/>
+                                    <outlet property="delegate" destination="FBd-H7-puR" id="ipc-ph-8o1"/>
                                 </connections>
                             </tableView>
                         </subviews>

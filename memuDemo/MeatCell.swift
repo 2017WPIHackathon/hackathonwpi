@@ -10,7 +10,6 @@ import UIKit
 
 class MeatCell: UITableViewCell {
     
-    
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var lblView: UILabel!
 
@@ -24,5 +23,4 @@ class MeatCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

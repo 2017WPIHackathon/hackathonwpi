@@ -1,2 +1,2 @@
-# lift-side-memu-in-swift-3
-Lift Slide Out Menu (Swift 3 in Xcode 8 : SWRevealViewController)
+# 2017 Hackathon WPI
+2017 WPI Hackathon by 2016Fall CS classmates

@@ -2,8 +2,8 @@
 //  menuViewController.swift
 //  memuDemo
 //
-//  Created by Parth Changela on 09/10/16.
-//  Copyright © 2016 Parth Changela. All rights reserved.
+//  Created by Yen-Chang Hsieh on 1/14/17.
+//  Copyright © 2017 Parth Changela. All rights reserved.
 //
 
 import UIKit
@@ -17,8 +17,8 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var iconArray:Array = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        ManuNameArray = ["Home","Message","Map","Setting"]
-        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"setting")!]
+        ManuNameArray = ["Meat", "Vegetable","Seasoning","Shopping Cart"]
+        iconArray = [UIImage(named:"meat")!,UIImage(named:"vegetable")!,UIImage(named:"shopping cart")!,UIImage(named:"shopping cart")!]
         
         imgProfile.layer.borderWidth = 2
         imgProfile.layer.borderColor = UIColor.green.cgColor
@@ -33,10 +33,12 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ManuNameArray.count
         
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         
@@ -52,33 +54,37 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell:MenuCell = tableView.cellForRow(at: indexPath) as! MenuCell
         print(cell.lblMenuname.text!)
-        if cell.lblMenuname.text! == "Home"
-        {
-            print("Home Tapped")
+        if cell.lblMenuname.text! == "Meat" {
+            print("Meat Tapped")
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MeatViewController") as! MeatViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
-            
         }
-        if cell.lblMenuname.text! == "Message"
-        {
-            print("message Tapped")
+        
+        if cell.lblMenuname.text! == "Vegetable" {
+            print("Vegetable Tapped")
            
             let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "VegetableViewController") as! VegetableViewController
             let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
             
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
         }
-        if cell.lblMenuname.text! == "Map"
-        {
-            print("Map Tapped")
+        
+        if cell.lblMenuname.text! == "Seasoning" {
+            print ("Seasoning")
+            
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "SeasoningViewController") as! SeasoningViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)            
         }
-        if cell.lblMenuname.text! == "Setting"
-        {
-           print("setting Tapped")
+        
+        if cell.lblMenuname.text! == "Shopping Cart" {
+            print("Shopping Cart")
         }
     }
     /*

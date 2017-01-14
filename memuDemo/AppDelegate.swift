@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  memuDemo
 //
-//  Created by Parth Changela on 09/10/16.
-//  Copyright © 2016 Parth Changela. All rights reserved.
+//  Created by Yen-Chang Hsieh on 1/14/17.
+//  Copyright © 2017 Parth Changela. All rights reserved.
 //
 
 import UIKit

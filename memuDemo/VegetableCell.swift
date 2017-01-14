@@ -10,6 +10,9 @@ import UIKit
 
 class VegetableCell: UITableViewCell {
 
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblView: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
